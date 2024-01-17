@@ -10,7 +10,6 @@ def launch_setup():
     sl.node('move', 'waypoint_publisher')
     sl.node('move', 'place_frame.py')
     sl.node('move', 'tracker.py')
-
     if sl.arg('rviz'):
         sl.rviz(base_path + '/config.rviz')
 

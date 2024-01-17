@@ -5,8 +5,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-set(CMAKE_BUILD_TYPE Release)
-
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
 
@@ -36,9 +34,6 @@ ament_target_dependencies(FillMap
   rclcpp
   nav_msgs
 )
-
-install(PROGRAMS scripts/map_node.py scripts/obstacle_node.py
-        DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY scripts/utm
         DESTINATION lib/${PROJECT_NAME})
