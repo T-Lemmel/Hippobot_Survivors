@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/humble/include/**",
+        "/home/t-lemmel/Aquabot_Tom/src/Hippobot_ekf/move_ekf/include/**",
+        "/home/t-lemmel/Aquabot_Tom/src/package_thruster_activation/include/**",
+        "/home/t-lemmel/Aquabot_Tom/src/test_float/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

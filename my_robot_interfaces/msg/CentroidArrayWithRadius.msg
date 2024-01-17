@@ -1,0 +1,3 @@
+# CentroidArrayWithRadius.msg
+CentroidWithRadius[] centroids
+
