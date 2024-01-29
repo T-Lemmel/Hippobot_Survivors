@@ -33,6 +33,7 @@ ament_target_dependencies(FillMap
   geometry_msgs
   rclcpp
   nav_msgs
+  map_msgs
 )
 
 install(DIRECTORY scripts/utm

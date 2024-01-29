@@ -3,6 +3,7 @@
 #include <geometry_msgs/msg/pose_array.hpp>
 #include <geometry_msgs/msg/pose.hpp>
 #include <nav_msgs/msg/occupancy_grid.hpp>
+#include <map_msgs/msg/occupancy_grid_update.hpp>
 #include <iostream>
 #include <ctime>
 #include <my_robot_interfaces/msg/centroid_with_radius.hpp>
@@ -27,10 +28,13 @@ public:
 
             set_parameter(rclcpp::Parameter("use_sim_time",true));
 
-            // Initialize 'world' frame
-        void init() {
-            InitializeWorldFrame();
-                            }
+            
+                    }
+            void init(){
+              // Initialize 'world' frame
+              InitializeWorldFrame();
+                    }
+            
 
 private:
 
@@ -53,9 +57,6 @@ private:
 
           static_broadcaster.sendTransform(static_transform_stamped);
         }
-
-      rclcpp::Subscription<my_robot_interfaces::msg::CentroidArrayWithRadius>::SharedPtr subscription_;
-      rclcpp::Publisher<nav_msgs::msg::OccupancyGrid>::SharedPtr MapPublisher_;
     
 
     void MapCreate()

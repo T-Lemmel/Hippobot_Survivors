@@ -18,6 +18,8 @@
   <depend>ros_gz_interfaces</depend>
   <depend>tf2_ros</depend>
   <depend>nav2_common</depend>
+  <depend>nav_msgs</depend>
+  <depend>map_msgs</depend>
   
   
   <exec_depend>rosidl_default_runtime</exec_depend>

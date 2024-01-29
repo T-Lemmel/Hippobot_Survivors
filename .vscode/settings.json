@@ -16,5 +16,8 @@
         ""
     ],
     "cmake.sourceDirectory": "/home/t-lemmel/Aquabot_Tom/src/Hippobot_Survivors/move",
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "*.tcc": "cpp"
+    }
 }

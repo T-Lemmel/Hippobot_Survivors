@@ -65,9 +65,9 @@
 #     3a. Set your "world_frame" to your map_frame value
 #     3b. MAKE SURE something else is generating the odom->base_link transform. Note that this can even be another state
 #         estimation node from robot_localization! However, that instance should *not* fuse the global data.
-        odom_frame: odom            # Defaults to "odom" if unspecified WORLD BEFORE ME 
+        odom_frame: world            # Defaults to "odom" if unspecified WORLD BEFORE ME 
         base_link_frame: wamv/wamv/base_link  # Defaults to "base_link" if unspecified
-        world_frame: odom           # Defaults to the value of odom_frame if unspecified, COMMENTED BEFORE ME 
+        #world_frame: odom           # Defaults to the value of odom_frame if unspecified, COMMENTED BEFORE ME 
 
 # The filter accepts an arbitrary number of inputs from each input message type (nav_msgs/Odometry,
 # geometry_msgs/PoseWithCovarianceStamped, geometry_msgs/TwistWithCovarianceStamped,

@@ -1987,7 +1987,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/opt/ros/humble/lib/libtf2_msgs__rosidl_typesupport_fastrtps_cpp.so"
+			"value" : "/opt/ros/humble/lib/libmap_msgs__rosidl_typesupport_fastrtps_cpp.so"
 		},
 		{
 			"name" : "action_msgs_DIR",
@@ -2374,6 +2374,18 @@
 			"value" : "/opt/ros/humble/share/libyaml_vendor/cmake"
 		},
 		{
+			"name" : "map_msgs_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for map_msgs."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/ros/humble/share/map_msgs/cmake"
+		},
+		{
 			"name" : "message_filters_DIR",
 			"properties" : 
 			[
@@ -2432,6 +2444,18 @@
 			],
 			"type" : "PATH",
 			"value" : "/opt/ros/humble/share/nav2_common/cmake"
+		},
+		{
+			"name" : "nav_msgs_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for nav_msgs."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/opt/ros/humble/share/nav_msgs/cmake"
 		},
 		{
 			"name" : "pkgcfg_lib__OPENSSL_crypto",
