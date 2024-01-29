@@ -6,6 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
+        - /TF1/Frames1
+        - /TF1/Frames1/world1
         - /Map1/Topic1
       Splitter Ratio: 0.42907801270484924
     Tree Height: 575
@@ -556,7 +559,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 50
+      Distance: 62.32682418823242
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -571,10 +574,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.28539884090423584
+      Pitch: 0.3553987741470337
       Target Frame: wamv/wamv/base_link
       Value: Orbit (rviz)
-      Yaw: 3.1150002479553223
+      Yaw: 3.0150022506713867
     Saved:
       - Class: rviz_default_plugins/Orbit
         Distance: 50

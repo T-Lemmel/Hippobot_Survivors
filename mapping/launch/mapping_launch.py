@@ -2,7 +2,7 @@ from simple_launch import SimpleLauncher
 import os
 
 sl = SimpleLauncher(use_sim_time=True)
-sl.declare_arg('rviz', True)
+sl.declare_arg('rviz', False)
 base_path = os.path.abspath(os.path.dirname(__file__))
 
 def launch_setup():

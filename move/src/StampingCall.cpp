@@ -7,7 +7,6 @@
 
 namespace move
 {
-
 // main node
 class StampingCall : public rclcpp::Node
 {

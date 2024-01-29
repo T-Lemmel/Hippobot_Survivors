@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-aecdeafb978a41ca10cc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "move",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "StampingCall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-StampingCall-Debug-949587b572e6d4281c9c.json",
+					"name" : "StampingCall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_uninstall-Debug-7c8b2480591c25e2ad5d.json",
+					"name" : "move_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-ee1b45f36fb6f01f893b.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "waypoint_publisher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-waypoint_publisher-Debug-65556bc8d785597bb13f.json",
+					"name" : "waypoint_publisher",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/t-lemmel/Aquabot_Tom/src/Hippobot_Survivors/build",
+		"source" : "/home/t-lemmel/Aquabot_Tom/src/Hippobot_Survivors/move"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
