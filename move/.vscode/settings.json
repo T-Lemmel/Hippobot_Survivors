@@ -1,5 +1,5 @@
 {
-  "cmake.buildDirectory": "/home/t-lemmel/Aquabot_Tom/build/mapping",
+  "cmake.buildDirectory": "/home/t-lemmel/Aquabot_Tom/build/move",
   "editor.mouseWheelZoom": true,
   "python.autoComplete.extraPaths": [
     "/home/t-lemmel/Aquabot_Tom/install/my_robot_interfaces/local/lib/python3.10/dist-packages",

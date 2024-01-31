@@ -9,6 +9,8 @@ base_path = os.path.abspath(os.path.dirname(__file__))
 def launch_setup():
 
     sl.node('move','StampingCall')
+
+    print(sl.find('move', 'ekf.yaml'))
     
     # run an EKF for wamv
     sl.node('robot_localization', 'ekf_node', name = 'ekf',

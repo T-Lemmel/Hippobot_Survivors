@@ -23,7 +23,9 @@ public:
                 "centroids", 10, std::bind(&Mapping::UpdateCentroids, this, std::placeholders::_1));
             subscription2_= this->create_subscription<geometry_msgs::msg::Pose>(
                         "boat_pose", 10, std::bind(&Mapping::BoatPoseCallback, this, std::placeholders::_1));
-            MapPublisher_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("WorldMap", 10);
+            
+            
+            MapPublisher_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("WorldMap", 10); //TO DO use transient local instead of volatile 
             MapUpdatePublisher_ = this->create_publisher<map_msgs::msg::OccupancyGridUpdate>("WorldMap_updates", 10);
             
             // Create a publisher for PoseArray
@@ -31,8 +33,6 @@ public:
             
                     }
             void init(){
-              // Initialize 'world' frame
-              InitializeWorldFrame();
               // Create the map and publish it in a loop to make sure Rviz has time to receive it
               auto start = std::chrono::system_clock::now();
               while (std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - start).count() < 10)
@@ -43,27 +43,6 @@ public:
             
 
 private:
-
-    void InitializeWorldFrame() {
-          static tf2_ros::StaticTransformBroadcaster static_broadcaster(shared_from_this());
-          geometry_msgs::msg::TransformStamped static_transform_stamped;
-          static_transform_stamped.header.stamp = this->now();
-          static_transform_stamped.header.frame_id = "wamv/wamv/base_link";
-          static_transform_stamped.child_frame_id = "world";
-          static_transform_stamped.transform.translation.x = 0.0;
-          static_transform_stamped.transform.translation.y = 0.0;
-          static_transform_stamped.transform.translation.z = 0.0;
-
-          tf2::Quaternion quat;
-          quat.setRPY(0, 0, 0);
-          static_transform_stamped.transform.rotation.x = quat.x();
-          static_transform_stamped.transform.rotation.y = quat.y();
-          static_transform_stamped.transform.rotation.z = quat.z();
-          static_transform_stamped.transform.rotation.w = quat.w();
-
-          static_broadcaster.sendTransform(static_transform_stamped);
-        }
-    
 
     void MapCreate()
     {
@@ -112,6 +91,7 @@ private:
         oldposx = (int)boat_X;
         oldposy = (int)boat_Y,
         UpdateMap(oldposx,oldposy,1,-1);
+        
       }
 
 
@@ -148,7 +128,6 @@ private:
 
 int main(int argc, char** argv) {
     rclcpp::init(argc, argv);
-    std::cout << "cccccccccccc";
     auto processor = std::make_shared<Mapping>();
     processor->init();
     rclcpp::spin(processor);

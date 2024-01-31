@@ -49,7 +49,7 @@ install(PROGRAMS scripts/place_frame.py scripts/tracker.py
 install(DIRECTORY scripts/utm
         DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY launch
+install(DIRECTORY launch params
         DESTINATION share/${PROJECT_NAME})
         
 
