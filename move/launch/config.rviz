@@ -6,9 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /TF1
         - /TF1/Frames1
-        - /Map1/Topic1
       Splitter Ratio: 0.42907801270484924
     Tree Height: 575
   - Class: rviz_common/Selection
@@ -479,7 +477,7 @@ Visualization Manager:
         Durability Policy: Volatile
         Filter size: 10
         History Policy: Keep Last
-        Reliability Policy: Reliable
+        Reliability Policy: Best Effort
         Value: /WorldMap
       Update Topic:
         Depth: 5

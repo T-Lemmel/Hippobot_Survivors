@@ -1,3 +1,4 @@
+#include <chrono>
 #include <rclcpp/rclcpp.hpp>
 #include <rclcpp/node.hpp>
 #include <geometry_msgs/msg/pose_array.hpp>
@@ -11,6 +12,8 @@
 #include <tf2_ros/static_transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
 
+// TO DO : Make sure the update topic doesn't publish out of bounds and reduce initial map publishing time ( ligne 36-41 )
+
 class Mapping : public rclcpp::Node {
 public:
     Mapping() :
@@ -21,18 +24,21 @@ public:
             subscription2_= this->create_subscription<geometry_msgs::msg::Pose>(
                         "boat_pose", 10, std::bind(&Mapping::BoatPoseCallback, this, std::placeholders::_1));
             MapPublisher_ = this->create_publisher<nav_msgs::msg::OccupancyGrid>("WorldMap", 10);
-            MapUpdatePublisher_ = this->create_publisher<map_msgs::msg::OccupancyGridUpdate>("WorldMap_Updates", 10);
-            MapCreate();
-
+            MapUpdatePublisher_ = this->create_publisher<map_msgs::msg::OccupancyGridUpdate>("WorldMap_updates", 10);
+            
             // Create a publisher for PoseArray
-
             set_parameter(rclcpp::Parameter("use_sim_time",true));
-
             
                     }
             void init(){
               // Initialize 'world' frame
               InitializeWorldFrame();
+              // Create the map and publish it in a loop to make sure Rviz has time to receive it
+              auto start = std::chrono::system_clock::now();
+              while (std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now() - start).count() < 10)
+              {
+                MapCreate();
+              }              
                     }
             
 
@@ -61,6 +67,8 @@ private:
 
     void MapCreate()
     {
+        std::cout << "map creation"<<std::endl;
+        map_.header.stamp = this->now();
         map_.header.frame_id = "world";
         map_.info.width = 1000;
         map_.info.height = 1000;
@@ -69,7 +77,6 @@ private:
         map_.info.origin.position.y = -500;
 
         map_.data.resize(map_.info.width*map_.info.height,0);
-
         MapPublisher_->publish(map_);
     }
 
@@ -111,8 +118,9 @@ private:
 
     void UpdateMap(const int x, const int y, const int r, const int val)
       {
-
+          std::cout << "update map"<<std::endl;
           map_msgs::msg::OccupancyGridUpdate UpdateMap;
+          UpdateMap.header.stamp = this->now();
           UpdateMap.header.frame_id = "world";
           UpdateMap.x = 500+x-r;
           UpdateMap.y = 500+y-r;
